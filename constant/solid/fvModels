@@ -1,0 +1,29 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      fvModels;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Placeholder uniform heat source
+// Basis: 15 MWth total / 876 pipes / 14 axial slices
+// Per unit cell slice: ~15e6 / 169 unit cells / 14 slices = ~6340 W per slice
+// Volumetric: q = P / V = 6340 / (0.055^2 * 0.0114) = ~1.83e8 W/m³
+// This will be replaced by OpenMC pin power distribution in Phase 3
+
+coreHeatSource
+{
+    type            heatSource;
+    select          all;
+    q               1.83e8;
+}
+
+// ************************************************************************* //

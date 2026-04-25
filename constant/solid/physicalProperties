@@ -1,0 +1,41 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      physicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Graphite monolith homogenized properties
+// Thermal conductivity: 9.92 W/m·K (Chiew-Glandt ETC model, Price et al.)
+// Density: 1700 kg/m³
+// Specific heat: 710 J/kg·K at operating temperature
+
+thermoType          constSolidThermo;
+
+rho
+{
+    type        uniform;
+    value       1700;
+}
+
+Cv
+{
+    type        uniform;
+    value       710;
+}
+
+kappa
+{
+    type        uniform;
+    value       9.92;
+}
+
+// ************************************************************************* //

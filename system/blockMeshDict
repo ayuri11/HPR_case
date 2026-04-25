@@ -1,0 +1,180 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// HPR Unit Cell - single sodium heat pipe in graphite monolith
+// Geometry basis:
+//   Heat pipe OD : 15.9 mm (5/8-inch, KRUSTY/eVinci class)
+//   Heat pipe radius r : 7.95 mm
+//   Monolith half-width : 27.5 mm (55 mm flat-to-flat unit cell)
+//   Axial slice thickness : 11.4 mm (160 cm / 14 axial slices)
+//   Inner square corner : r/sqrt(2) = 7.95/1.4142 = 5.62 mm
+
+convertToMeters 0.001;  // all coordinates in millimetres
+
+vertices
+(
+    // Outer square corners - graphite monolith boundary
+    (-27.5 -27.5  0   )  // 0
+    ( 27.5 -27.5  0   )  // 1
+    ( 27.5  27.5  0   )  // 2
+    (-27.5  27.5  0   )  // 3
+    (-27.5 -27.5  11.4)  // 4
+    ( 27.5 -27.5  11.4)  // 5
+    ( 27.5  27.5  11.4)  // 6
+    (-27.5  27.5  11.4)  // 7
+
+    // Inner square corners - heat pipe wall (circle r=7.95mm)
+    // corner distance from center = r/sqrt(2) = 5.62 mm
+    (-5.62 -5.62  0   )  // 8
+    ( 5.62 -5.62  0   )  // 9
+    ( 5.62  5.62  0   )  // 10
+    (-5.62  5.62  0   )  // 11
+    (-5.62 -5.62  11.4)  // 12
+    ( 5.62 -5.62  11.4)  // 13
+    ( 5.62  5.62  11.4)  // 14
+    (-5.62  5.62  11.4)  // 15
+);
+
+blocks
+
+(
+    // All blocks use same cell count on shared edges
+    // 20 cells radially (graphite thickness)
+    // 20 cells circumferentially (around heat pipe)
+    // 1 cell axially (single slice)
+
+    // Bottom block
+    hex (0 1 9 8  4 5 13 12)  (20 20 1)  simpleGrading (1 1 1)
+    // Right block
+    hex (1 2 10 9  5 6 14 13) (20 20 1)  simpleGrading (1 1 1)
+    // Top block
+    hex (3 11 10 2  7 15 14 6) (20 20 1) simpleGrading (1 1 1)
+    // Left block
+    hex (0 8 11 3  4 12 15 7) (20 20 1)  simpleGrading (1 1 1)
+);
+
+edges (
+    // Circular arcs defining the heat pipe outer wall
+    // Arc midpoints at radius 7.95 mm on each face
+
+    // Front face (z=0)
+    arc  8  9 ( 0     -7.95  0   )  // bottom arc
+    arc  9 10 ( 7.95   0     0   )  // right arc
+    arc 10 11 ( 0      7.95  0   )  // top arc
+    arc 11  8 (-7.95   0     0   )  // left arc
+
+    // Back face (z=11.4)
+    arc 12 13 ( 0     -7.95  11.4)
+    arc 13 14 ( 7.95   0     11.4)
+    arc 14 15 ( 0      7.95  11.4)
+    arc 15 12 (-7.95   0     11.4)
+);
+
+boundary
+(
+    // Heat pipe outer wall - THIS is where IVTBC convective BC goes
+    heatpipe_wall
+    {
+        type wall;
+        faces
+        (
+            (8  12 13  9)
+            (9  13 14 10)
+            (10 14 15 11)
+            (11 15 12  8)
+        );
+    }
+
+    // Outer monolith boundary - symmetry (unit cell repeats)
+    outer_symmetry
+    {
+        type symmetry;
+        faces
+        (
+            (0 4 5 1)   // bottom face
+            (1 5 6 2)   // right face
+            (2 6 7 3)   // top face
+            (3 7 4 0)   // left face
+        );
+    }
+
+    // Front and back - empty for 2D behaviour
+    front
+    {
+        type empty;
+        faces
+        (
+            (0 1 9 8)
+            (1 2 10 9)
+            (2 3 11 10)
+            (3 0 8 11)
+        );
+    }
+
+    back
+    {
+        type empty;
+        faces
+        (
+            (4 12 13 5)
+            (5 13 14 6)
+            (6 14 15 7)
+            (7 15 12 4)
+        );
+    }
+);
+
+// ************************************************************************* //
+
+
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     foamMultiRun;
+
+regionSolvers
+{
+    solid           solid;
+}
+
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+endTime         1;
+deltaT          0.1;
+
+writeControl    timeStep;
+writeInterval   1;
+purgeWrite      0;
+writeFormat     ascii;
+writePrecision  8;
+writeCompression off;
+timeFormat      general;
+timePrecision   6;
+runTimeModifiable true;
+
+// ************************************************************************* //
