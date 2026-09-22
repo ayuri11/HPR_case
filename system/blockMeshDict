@@ -16,10 +16,10 @@ FoamFile
 // HPR Unit Cell - single sodium heat pipe in graphite monolith
 // Geometry basis:
 //   Heat pipe OD : 15.9 mm (5/8-inch, KRUSTY/eVinci class)
-//   Heat pipe radius r : 7.95 mm
+//   Heat pipe radius r : 12.7 mm
 //   Monolith half-width : 27.5 mm (55 mm flat-to-flat unit cell)
 //   Axial slice thickness : 11.4 mm (160 cm / 14 axial slices)
-//   Inner square corner : r/sqrt(2) = 7.95/1.4142 = 5.62 mm
+//   Inner square corner : r/sqrt(2) = 12.7/1.4142 = 5.62 mm
 
 convertToMeters 0.001;  // all coordinates in millimetres
 
@@ -37,14 +37,14 @@ vertices
 
     // Inner square corners - heat pipe wall (circle r=7.95mm)
     // corner distance from center = r/sqrt(2) = 5.62 mm
-    (-5.62 -5.62  0   )  // 8
-    ( 5.62 -5.62  0   )  // 9
-    ( 5.62  5.62  0   )  // 10
-    (-5.62  5.62  0   )  // 11
-    (-5.62 -5.62  11.4)  // 12
-    ( 5.62 -5.62  11.4)  // 13
-    ( 5.62  5.62  11.4)  // 14
-    (-5.62  5.62  11.4)  // 15
+    (-8.98 -8.98  0   )  // 8
+    ( 8.98 -8.98  0   )  // 9
+    ( 8.98  8.98  0   )  // 10
+    (-8.98  8.98  0   )  // 11
+    (-8.98 -8.98  11.4)  // 12
+    ( 8.98 -8.98  11.4)  // 13
+    ( 8.98  8.98  11.4)  // 14
+    (-8.98  8.98  11.4)  // 15
 );
 
 blocks
@@ -67,19 +67,19 @@ blocks
 
 edges (
     // Circular arcs defining the heat pipe outer wall
-    // Arc midpoints at radius 7.95 mm on each face
+    // Arc midpoints at radius 12.7 mm on each face
 
     // Front face (z=0)
-    arc  8  9 ( 0     -7.95  0   )  // bottom arc
-    arc  9 10 ( 7.95   0     0   )  // right arc
-    arc 10 11 ( 0      7.95  0   )  // top arc
-    arc 11  8 (-7.95   0     0   )  // left arc
+    arc  8  9 ( 0     -12.7  0   )  // bottom arc
+    arc  9 10 ( 12.7   0     0   )  // right arc
+    arc 10 11 ( 0      12.7  0   )  // top arc
+    arc 11  8 (-12.7   0     0   )  // left arc
 
     // Back face (z=11.4)
-    arc 12 13 ( 0     -7.95  11.4)
-    arc 13 14 ( 7.95   0     11.4)
-    arc 14 15 ( 0      7.95  11.4)
-    arc 15 12 (-7.95   0     11.4)
+    arc 12 13 ( 0     -12.7  11.4)
+    arc 13 14 ( 12.7   0     11.4)
+    arc 14 15 ( 0      12.7  11.4)
+    arc 15 12 (-12.7   0     11.4)
 );
 
 boundary

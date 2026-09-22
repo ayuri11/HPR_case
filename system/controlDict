@@ -22,7 +22,7 @@ regionSolvers
 startFrom       startTime;
 startTime       0;
 stopAt          endTime;
-endTime         10;
+endTime         50;
 deltaT          0.01;
 
 writeControl    timeStep;
@@ -34,3 +34,16 @@ writeCompression off;
 timeFormat      general;
 timePrecision   6;
 runTimeModifiable true;
+
+functions
+{
+    wallHeatFlux
+    {
+        type            wallHeatFlux;
+        libs            ("libfieldFunctionObjects.so");
+        region          solid;
+        patches         (heatpipe_wall);
+        writeControl    timeStep;
+        writeInterval   1;
+    }
+}
