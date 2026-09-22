@@ -1,0 +1,128 @@
+nohup: ignoring input
+=================================================================
+MULTI-RING IVTBC — Design v2 (r_HP=12.7mm, N=762)
+=================================================================
+
+--- ring_0 | r=2.65cm | q=21688.7W/pipe ---
+    q_vol = 4.481e+06 W/m3
+    Tvap (analytical) = 1482.38 K (1209.23 C)
+  Updated Ta = 1482.3831 K
+  iter 0: Q=45.55W Tvap=1282.31K (1009.16C) diff=200.0774K
+  Updated Ta = 1282.3057 K
+  iter 1: Q=45.55W Tvap=1182.27K (909.12C) diff=100.0387K
+  Updated Ta = 1182.2671 K
+  iter 2: Q=45.55W Tvap=1132.25K (859.10C) diff=50.0193K
+  Updated Ta = 1132.2477 K
+  iter 3: Q=45.55W Tvap=1107.24K (834.09C) diff=25.0097K
+  Updated Ta = 1107.2380 K
+  iter 4: Q=45.55W Tvap=1094.73K (821.58C) diff=12.5048K
+  Updated Ta = 1094.7332 K
+  iter 5: Q=45.55W Tvap=1088.48K (815.33C) diff=6.2524K
+  Updated Ta = 1088.4808 K
+  iter 6: Q=45.55W Tvap=1085.35K (812.20C) diff=3.1262K
+  Updated Ta = 1085.3546 K
+  iter 7: Q=45.55W Tvap=1083.79K (810.64C) diff=1.5631K
+  Updated Ta = 1083.7915 K
+  iter 8: Q=45.55W Tvap=1083.01K (809.86C) diff=0.7816K
+  Updated Ta = 1083.0099 K
+  iter 9: Q=45.55W Tvap=1082.62K (809.47C) diff=0.3908K
+  Updated Ta = 1082.6191 K
+  iter 10: Q=45.55W Tvap=1082.42K (809.27C) diff=0.1954K
+  Updated Ta = 1082.4237 K
+  iter 11: Q=45.55W Tvap=1082.33K (809.18C) diff=0.0977K
+  CONVERGED
+  RESULT: Tvap = 1082.3261 K (809.1761 C)
+
+--- ring_1 | r=8.15cm | q=20992.1W/pipe ---
+    q_vol = 4.337e+06 W/m3
+    Tvap (analytical) = 1464.16 K (1191.01 C)
+  Updated Ta = 1464.1599 K
+  iter 0: Q=44.08W Tvap=1270.51K (997.36C) diff=193.6508K
+  Updated Ta = 1270.5090 K
+  iter 1: Q=44.08W Tvap=1173.68K (900.53C) diff=96.8254K
+  Updated Ta = 1173.6836 K
+  iter 2: Q=44.08W Tvap=1125.27K (852.12C) diff=48.4127K
+  Updated Ta = 1125.2709 K
+  iter 3: Q=44.08W Tvap=1101.06K (827.91C) diff=24.2064K
+  Updated Ta = 1101.0646 K
+  iter 4: Q=44.08W Tvap=1088.96K (815.81C) diff=12.1032K
+  Updated Ta = 1088.9614 K
+  iter 5: Q=44.08W Tvap=1082.91K (809.76C) diff=6.0516K
+  Updated Ta = 1082.9098 K
+  iter 6: Q=44.08W Tvap=1079.88K (806.73C) diff=3.0258K
+  Updated Ta = 1079.8840 K
+  iter 7: Q=44.08W Tvap=1078.37K (805.22C) diff=1.5129K
+  Updated Ta = 1078.3711 K
+  iter 8: Q=44.08W Tvap=1077.61K (804.46C) diff=0.7564K
+  Updated Ta = 1077.6147 K
+  iter 9: Q=44.08W Tvap=1077.24K (804.09C) diff=0.3782K
+  Updated Ta = 1077.2364 K
+  iter 10: Q=44.08W Tvap=1077.05K (803.90C) diff=0.1891K
+  Updated Ta = 1077.0473 K
+  iter 11: Q=44.08W Tvap=1076.95K (803.80C) diff=0.0946K
+  CONVERGED
+  RESULT: Tvap = 1076.9528 K (803.8028 C)
+
+--- ring_2 | r=13.65cm | q=21154.3W/pipe ---
+    q_vol = 4.371e+06 W/m3
+    Tvap (analytical) = 1468.40 K (1195.25 C)
+  Updated Ta = 1468.4031 K
+  iter 0: Q=44.42W Tvap=1273.26K (1000.11C) diff=195.1473K
+  Updated Ta = 1273.2557 K
+  iter 1: Q=44.42W Tvap=1175.68K (902.53C) diff=97.5737K
+  Updated Ta = 1175.6821 K
+  iter 2: Q=44.42W Tvap=1126.90K (853.75C) diff=48.7868K
+  Updated Ta = 1126.8952 K
+  iter 3: Q=44.42W Tvap=1102.50K (829.35C) diff=24.3934K
+  Updated Ta = 1102.5018 K
+  iter 4: Q=44.42W Tvap=1090.31K (817.16C) diff=12.1967K
+  Updated Ta = 1090.3051 K
+  iter 5: Q=44.42W Tvap=1084.21K (811.06C) diff=6.0984K
+  Updated Ta = 1084.2067 K
+  iter 6: Q=44.42W Tvap=1081.16K (808.01C) diff=3.0492K
+  Updated Ta = 1081.1576 K
+  iter 7: Q=44.42W Tvap=1079.63K (806.48C) diff=1.5246K
+  Updated Ta = 1079.6330 K
+  iter 8: Q=44.42W Tvap=1078.87K (805.72C) diff=0.7623K
+  Updated Ta = 1078.8707 K
+  iter 9: Q=44.42W Tvap=1078.49K (805.34C) diff=0.3811K
+  Updated Ta = 1078.4895 K
+  iter 10: Q=44.42W Tvap=1078.30K (805.15C) diff=0.1906K
+  Updated Ta = 1078.2990 K
+  iter 11: Q=44.42W Tvap=1078.20K (805.05C) diff=0.0953K
+  CONVERGED
+  RESULT: Tvap = 1078.2037 K (805.0537 C)
+
+--- ring_3 | r=19.15cm | q=722.6W/pipe ---
+    q_vol = 1.493e+05 W/m3
+    Tvap (analytical) = 933.90 K (660.75 C)
+  Updated Ta = 933.9034 K
+  iter 0: Q=1.52W Tvap=927.24K (654.09C) diff=6.6659K
+  Updated Ta = 927.2376 K
+  iter 1: Q=1.52W Tvap=923.90K (650.75C) diff=3.3329K
+  Updated Ta = 923.9046 K
+  iter 2: Q=1.52W Tvap=922.24K (649.09C) diff=1.6665K
+  Updated Ta = 922.2381 K
+  iter 3: Q=1.52W Tvap=921.40K (648.25C) diff=0.8332K
+  Updated Ta = 921.4049 K
+  iter 4: Q=1.52W Tvap=920.99K (647.84C) diff=0.4166K
+  Updated Ta = 920.9883 K
+  iter 5: Q=1.52W Tvap=920.78K (647.63C) diff=0.2083K
+  Updated Ta = 920.7800 K
+  iter 6: Q=1.52W Tvap=920.68K (647.53C) diff=0.1042K
+  Updated Ta = 920.6758 K
+  iter 7: Q=1.52W Tvap=920.62K (647.47C) diff=0.0521K
+  CONVERGED
+  RESULT: Tvap = 920.6237 K (647.4737 C)
+
+=================================================================
+FINAL PER-RING IVTBC RESULTS
+=================================================================
+Ring     Tvap_anal(C)   Tvap_IVTBC(C)   Diff(K)    Safe?
+-------------------------------------------------------
+ring_0   1209.23        809.18          400.06     ✅
+ring_1   1191.01        803.80          387.21     ✅
+ring_2   1195.25        805.05          390.20     ✅
+ring_3   660.75         647.47          13.28      ✅
+
+Saved: /home/pika/openfoam-cases/Heat-Pipe-Reactor/PHASE 3/ivtbc_fullwedge_perring.json

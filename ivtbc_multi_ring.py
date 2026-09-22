@@ -16,13 +16,10 @@ max_iter  = 20
 case_dir  = os.path.expanduser('~/HPR_case')
 
 ring_data = {
-    'ring_0': {'r_cm': 2.65,  'count': 6,   'q_hp_W': 4811},
-    'ring_1': {'r_cm': 5.30,  'count': 36,  'q_hp_W': 5611},
-    'ring_2': {'r_cm': 7.95,  'count': 72,  'q_hp_W': 8034},
-    'ring_3': {'r_cm': 10.60, 'count': 108, 'q_hp_W': 9754},
-    'ring_4': {'r_cm': 13.25, 'count': 144, 'q_hp_W': 3925},
-    'ring_5': {'r_cm': 15.90, 'count': 180, 'q_hp_W': 248},
-    'ring_6': {'r_cm': 18.55, 'count': 216, 'q_hp_W': 126},
+    'ring_0': {'r_cm': 2.65,  'count': 6,   'q_hp_W': 21688.7},
+    'ring_1': {'r_cm': 8.15,  'count': 36,  'q_hp_W': 20992.1},
+    'ring_2': {'r_cm': 13.65, 'count': 72,  'q_hp_W': 21154.3},
+    'ring_3': {'r_cm': 19.15, 'count': 126, 'q_hp_W': 722.6},
 }
 
 def update_heat_source(case_dir, q_vol):
