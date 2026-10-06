@@ -1,0 +1,60 @@
+nohup: ignoring input
+======================================================================
+MULTI-RING IVTBC v6 - steady-state, 12.7 mm mesh, energy-balance checked
+======================================================================
+
+--- ring_0 | r=2.65cm | q=21688.7 W/pipe ---
+    q_vol = 5.3817e+06 W/m3   injected = 154.532 W/slice
+    Tvap (energy-balance) = 1482.38 K (1209.23 C)
+  Ta = 1482.3831 K, initial T = 1788.32 K
+    endTime=600s: wall heat 154.430 W / injected 154.532 W = 0.9993  (4s)
+  iter 0: Tvap=1482.20K (1209.05C) diff=0.1878K
+  Ta = 1482.1953 K, initial T = 1788.13 K
+    endTime=600s: wall heat 154.430 W / injected 154.532 W = 0.9993  (4s)
+  iter 1: Tvap=1482.10K (1208.95C) diff=0.0939K
+  CONVERGED
+  RESULT: Tvap = 1208.95 C, Tm(formula) = 1434.89 C, Tmax(CFD) = 1584.04 C
+
+--- ring_1 | r=8.15cm | q=20992.1 W/pipe ---
+    q_vol = 5.2088e+06 W/m3   injected = 149.569 W/slice
+    Tvap (energy-balance) = 1464.16 K (1191.01 C)
+  Ta = 1464.1599 K, initial T = 1760.27 K
+    endTime=600s: wall heat 149.468 W / injected 149.569 W = 0.9993  (3s)
+  iter 0: Tvap=1463.98K (1190.83C) diff=0.1844K
+  Ta = 1463.9755 K, initial T = 1760.08 K
+    endTime=600s: wall heat 149.468 W / injected 149.569 W = 0.9993  (3s)
+  iter 1: Tvap=1463.88K (1190.73C) diff=0.0922K
+  CONVERGED
+  RESULT: Tvap = 1190.73 C, Tm(formula) = 1409.41 C, Tmax(CFD) = 1553.77 C
+
+--- ring_2 | r=13.65cm | q=19348.4 W/pipe ---
+    q_vol = 4.8010e+06 W/m3   injected = 137.857 W/slice
+    Tvap (energy-balance) = 1421.16 K (1148.01 C)
+  Ta = 1421.1602 K, initial T = 1694.08 K
+    endTime=600s: wall heat 137.766 W / injected 137.857 W = 0.9993  (3s)
+  iter 0: Tvap=1420.99K (1147.84C) diff=0.1671K
+  Ta = 1420.9930 K, initial T = 1693.92 K
+    endTime=600s: wall heat 137.766 W / injected 137.857 W = 0.9993  (3s)
+  iter 1: Tvap=1420.91K (1147.76C) diff=0.0836K
+  CONVERGED
+  RESULT: Tvap = 1147.76 C, Tm(formula) = 1349.31 C, Tmax(CFD) = 1482.38 C
+
+--- ring_3 | r=19.15cm | q=1754.5 W/pipe ---
+    q_vol = 4.3535e+05 W/m3   injected = 12.501 W/slice
+    Tvap (energy-balance) = 960.90 K (687.75 C)
+  Ta = 960.8983 K, initial T = 985.65 K
+    endTime=600s: wall heat 12.493 W / injected 12.501 W = 0.9993  (2s)
+  iter 0: Tvap=960.88K (687.73C) diff=0.0152K
+  CONVERGED
+  RESULT: Tvap = 687.73 C, Tm(formula) = 706.01 C, Tmax(CFD) = 718.08 C
+
+==========================================================================================
+FINAL PER-RING IVTBC RESULTS (steady state)
+==========================================================================================
+Ring   Tvap(C)   clad mgn(K)  Tm form(C)  Tmax CFD(C)  TRISO mgn(K)  EB ratio  Safe?
+ring_0 1209.0    -309.0       1434.9      1584.0       16.0          0.999     NO
+ring_1 1190.7    -290.7       1409.4      1553.8       46.2          0.999     NO
+ring_2 1147.8    -247.8       1349.3      1482.4       117.6         0.999     NO
+ring_3 687.7     212.3        706.0       718.1        881.9         0.999     YES
+
+Saved: /home/pika/openfoam-cases/Heat-Pipe-Reactor/PHASE 3/ivtbc_fullwedge_perring_v7.json
